@@ -1,0 +1,33 @@
+.hoverPointer:hover{
+    cursor: pointer;
+}
+
+
+thead th:hover{
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: #89CFF0;
+}
+
+thead{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+input{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+tbody td:hover{
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: #ADD8E6;
+}
+
+tbody .hoverPointer:hover{
+    background-color: red;
+}
+
+
+

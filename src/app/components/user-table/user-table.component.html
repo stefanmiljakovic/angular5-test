@@ -1,0 +1,81 @@
+<div>
+    <div style="height: 4em"></div>
+    <div class="container-fluid">
+        <div class="searchContainer col-md-3">
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </span>
+                        <input id="searchField" type="text" class="form-control" name="searchInput" placeholder="Search by..." [(ngModel)]="searchQuery">
+                    </div>
+                    <div style="height:1vh"></div>
+                    <button class="btn btn-primary" (click)="broadcastShow()" style="width: 100%; font-size: 1.5vh;">Add User</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tableContainer col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="hoverPointer" (click)="setOrderBy('email')">E-mail
+                            <span [hidden]="userOrder != 'email'">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                            <span [hidden]="userOrder != '!email'">
+                                <i class="fas fa-caret-up"></i>
+                            </span>
+                        </th>
+                        <th class="hoverPointer" (click)="setOrderBy('naziv')">Naziv
+                            <span [hidden]="userOrder != 'naziv'">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                            <span [hidden]="userOrder != '!naziv'">
+                                <i class="fas fa-caret-up"></i>
+                            </span>
+                        </th>
+                        <th class="hoverPointer" (click)="setOrderBy('naslov')">Naslov
+                            <span [hidden]="userOrder != 'naslov'">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                            <span [hidden]="userOrder != '!naslov'">
+                                <i class="fas fa-caret-up"></i>
+                            </span>
+                        </th>
+                        <th class="hoverPointer" (click)="setOrderBy('pravna')">Pravna osoba
+                            <span [hidden]="userOrder != 'pravna'">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                            <span [hidden]="userOrder != '!pravna'">
+                                <i class="fas fa-caret-up"></i>
+                            </span>
+                        </th>
+                        <th class="hoverPointer" (click)="setOrderBy('datum')">Datum
+                            <span [hidden]="userOrder != 'datum'">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                            <span [hidden]="userOrder != '!datum'">
+                                <i class="fas fa-caret-up"></i>
+                            </span>
+                        </th>
+                        <th class="hoverPointer"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of usersService.userList | orderBy: userOrder | searchFilter: searchQuery">
+                        <td>{{x.email}}</td>
+                        <td>{{x.naziv}}</td>
+                        <td>{{x.naslov}}</td>
+                        <td>{{x.pravna}}</td>
+                        <td>{{x.datum.toLocaleString()}}</td>
+                        <td class="hoverPointer" style="text-align: center" (click)="remove(x)">
+                            <span class="far fa-trash-alt"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

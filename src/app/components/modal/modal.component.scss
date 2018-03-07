@@ -1,0 +1,200 @@
+/* Modal */
+.regForm{
+    user-select: none;
+    height: 100vh;
+    max-height: 100%;
+}
+/* Head */
+.regHeader {
+    background-color: #1f7cb2;
+    height: 6.6vh;
+    text-align: right;
+    vertical-align: center;
+}
+.regHeader  span {
+    transition: color 0.3s ease-in-out;
+    color: white;
+    font-size: 5.3vh;
+    margin-right: 1.15vw;
+}
+
+.closeModal {
+    width: 3vw;
+    float: right;
+    margin-right: 2vw;
+}
+.closeModal:hover > span {
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    color: red;
+}
+
+/* Body */
+
+::placeholder{
+    color: #a0a0a0;
+    font-size: 3vh;
+    line-height: 6vh;
+    
+}
+
+.regBody {
+    padding-top: 4vh;
+    padding-bottom: 2vh;
+    padding-left: 3.84vw;
+    padding-right: 3.84vw;
+    height: 93vh;
+}
+
+.regTitle > h2{
+    font-size: 5.65vh;
+    color: #1f7cb2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.regVerticalSeparator{
+    height: 11vh;
+}
+
+.regBody input {
+    height: 8.49vh;
+    font-size: 3.5vh;
+}
+
+.regInputSeparator {
+    height: 3.77vh;
+}
+
+/* CheckBox */
+
+.regCheckDiv {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+.regCheck:focus{
+    outline: 0 !important;
+}
+
+.regCheckDiv label{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5vh;
+    margin-left: 2vw;
+    font-weight: 100;
+    align-self: flex-start;
+}
+
+
+.regCheckDiv input[type="checkbox"]{
+    -webkit-appearance: none;
+    margin-top: 0;
+    height: 5vh;
+}
+
+.regCheckDiv input[type="checkbox"]::before{
+    transition: background-color 0.1s ease;
+    transition: border-color 0.8s ease-in-out;
+    content: '';
+    overflow: hidden;
+    text-align: center;
+    font-size: 3vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: solid 4px;
+    border-color: #b2b2b2;
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+}
+
+.regCheckDiv input[type="checkbox"]:hover::before{
+    transition: background-color 0.2s ease;
+    background-color: #1f7cb2;
+}
+
+.regCheckDiv input[type="checkbox"]:checked::before{
+    transition: background-color 0.2s ease-in-out;
+    transition: border-color 0.4s ease-in-out;
+    color: white;
+    border-color: transparent;
+    font-family: 'mfg_labs_iconsetregular';
+    background-color: #1f7cb2;
+    content: '\2713';
+    position: center;
+}
+
+/* Radio */
+
+.regRadioHolder{
+    display: flex;
+    align-items:  center;
+}
+.regRadioText{
+    flex: 2 0 0;
+    font-size: 3.5vh;
+}
+
+.regRadioGroup{
+    font-size: 3.5vh;
+}
+
+.regRadioGroupHolder{
+    flex: 1 0 0;
+    float: right;
+    display: flex;
+}
+
+.regRadioGroup input[type="radio"]{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    display:inline-block;
+}
+
+input[type=radio] + label{
+    transition: border-color 0.5s;
+    height: 5.5vh;
+    width: 5.5vh;
+    text-align: center;
+    border: solid 1px transparent;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 0;
+}
+
+input[type=radio]:checked + label{
+    transition: border-color 0.5s;
+    display: inline-block;
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 0;
+    height: 5.5vh;
+    width: 5.5vh;
+    border: solid 1px #b2b2b2;
+}
+
+.btn-circle {
+    border-radius: 50px !important;
+    font-size: 2.7vh;
+    width: 250px;
+    height: 7vh;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.buttonHolder{
+    display: flex;
+}
+
+.buttonWrapper{
+    float:right;
+}
+
+.btn-circle:focus{
+    outline: 0;
+}
+.btn-circle:hover{
+    transition: background-color 0.4s ease-in-out;
+}

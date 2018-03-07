@@ -1,0 +1,103 @@
+<div class="regForm">
+
+  <!-- Header -->
+  <div class="regHeader">
+    <div (click)="broadcastCloseClick()" class="closeModal">
+      <span>X</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="regBody">
+    <div class="regTitle">
+      <h2>Dodaj uporabnika</h2>
+    </div>
+    <div class="regVerticalSeparator"></div>
+    
+    
+    <div class="row">
+      <form #modalForm = "ngForm">
+      <div class="col-sm-5">
+
+        <input class="form-control" id="email" name="email" [(ngModel)]="email" type="email" placeholder="E-naslov" pattern="[a-z0-9._]+@{1}[a-z0-9._]+[.][a-z0-9]" title="Use valid email">
+
+        <div class="regInputSeparator"></div>
+
+        <input id="password" name="password" class="form-control" [(ngModel)]="password" type="password" placeholder="Geslo">
+
+        <div class="regInputSeparator"></div>
+        <div class="regInputSeparator"></div>
+
+        <!-- CheckBox -->
+        <div class="regCheckDiv">
+          <input class="regCheck" id="pravno" name="pravno" [(ngModel)]="pravnaCheck" (ngModelChange)="bindDisplaysPravnaCheck()" type="checkbox">
+          <label for="pravno">Sem pravna oseba</label>
+        </div>
+
+
+        <div class="regInputSeparator"></div>
+
+        <!-- Radio -->
+        <div class="regRadioHolder" id="davcniRadioGroup">
+          <div class="regRadioText">Davčni savezanec</div>
+
+          <div regRadioGroupHolder>
+            <div class="regRadioGroup">
+              <input id="regRadioDA" type="radio" name="optradio">
+              <label class="radio-inline" (click)="changeRadio('regRadioDA')">da</label>
+              <input id="regRadioNE" checked type="radio" name="optradio">
+              <label class="radio-inline" (click)="changeRadio('regRadioNE')">ne</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="regInputSeparator"></div>
+
+        <input class="form-control" id = "davcnaStevilka" name="davcnaStevilka" [(ngModel)] = "davcnaStevilka" type="text" placeholder="Davčna številka">
+
+        <div class="regInputSeparator"></div>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5">
+
+        <input id="ime" name = "ime" class="form-control" [(ngModel)] = "ime" type="text" [placeholder]="namePlaceholder">
+        <div class="regInputSeparator"></div>
+        <div class="row">
+          <div class="col-sm-4">
+            <input name = "post" [(ngModel)] = "post" class="form-control" type="text" placeholder="Poštna št.">
+          </div>
+          <div class="col-sm-8">
+            <input name = "kraj" [(ngModel)] = "kraj" class="form-control" type="text" placeholder="Kraj">
+          </div>
+          
+        </div>
+
+        <div class="regInputSeparator"></div>
+        <input id="mobil" name="mobil" [(ngModel)]="mobil" class="form-control" type="text" placeholder="Mobilna št. (opcijsko)" pattern="([+]?[0-9]{3}\s?[0-9]{2}|[0-9]{3})\s?[0-9]{3}\s?[0-9]{3}"
+        title="Please use following phone format: +3XX XXX XXX XXX or XXX XXX XXX">
+
+        <div class="regInputSeparator"></div>
+        <div class="regInputSeparator"></div>
+        <div class="regInputSeparator"></div>
+
+        <!-- CheckBox -->
+        <div class="regCheckDiv">
+            <input class="regCheck" name="strinjam" id="strinjam" [(ngModel)] = "strinjamSe" type="checkbox">
+            <label for="strinjam">Strinjam se s <a href="#">pogoji uprave</a>.</label>
+        </div>
+
+        <div class="regInputSeparator"></div>
+        <div class="regInputSeparator"></div>
+
+        <!-- Button -->
+        <div class="buttonContainer">
+          <div class="buttonWrapper">
+            <button name="register" class="btn btn-primary btn-circle" (click) = "addUser()">REGISTRACIJA</button>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    
+  </div>
+</div>
